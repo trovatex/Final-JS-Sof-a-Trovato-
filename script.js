@@ -1,16 +1,24 @@
-
-        let precioHabitacion = 50
-
-        let nombre = (prompt("Bienvenido al Hostel TROVATEX BUZIOS! Ingrese su nombre para continuar.")).toLowerCase();
-
-        // if (nombre != (isNaN)) {
-        //   alert(`por favor, ingrese un nombre válido`)} // hacer que este ciclo continue, porque se corta
-
-        let dias = parseFloat(prompt(`Hola ${nombre}! Cuantos días te gustaría estar en el paraíso?`))
-
-        let personas = parseFloat(prompt("Cuantas personas se van a hospedar en el hostel?"))
-
+        const precioHabitacion = 50
         const descuento = 0.15
+
+        let nombre = (prompt("Bienvenido al Hostel TROVATEX! Ingrese su nombre para continuar.")).toLowerCase();
+        let dias, personas
+
+        do {
+            dias = parseFloat(prompt(`Hola ${nombre}! Cuantos días te gustaría estar en el paraíso?`))
+        if (isNaN(dias)) {
+            alert("Por favor ingresa un número válido")
+        }
+        } while (isNaN(dias))
+    
+            
+        do { 
+            personas = parseFloat(prompt("Cuantas personas se van a hospedar en el hostel?"))
+        if(isNaN(personas)) {
+            alert("Por favor ingresa un número válido")
+        }
+        } while (isNaN(personas))
+
 
         cupon = parseInt(prompt("Tiene cupon de descuento?"))
 
@@ -25,8 +33,13 @@
         }
 
 
-// const multiplicar = (dias, personas) => dias * personas
-// console.log(multiplicar)
+
+
+
+
+
+// const total = (precioHabitacion, personas) => precioHabitacion * personas
+// console.log(total)
 
 // function precio (parametro1, parametro2) {
 //  return parametro1, parametro2
