@@ -1,5 +1,5 @@
 
-        let precioHabitacion = 5000
+        let precioHabitacion = 50
 
         let nombre = (prompt("Bienvenido al Hostel TROVATEX BUZIOS! Ingrese su nombre para continuar.")).toLowerCase();
 
@@ -19,8 +19,9 @@
             console.log(total)
         } else {
             total = (precioHabitacion * personas) * dias
-            parseInt(prompt(total))
+            parseInt(prompt(`El total a pagar es de $ ${total} reales. Desea continuar con la reserva?`))
         }
+
 
 // const multiplicar = (dias, personas) => dias * personas
 // console.log(multiplicar)
