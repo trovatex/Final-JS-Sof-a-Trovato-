@@ -19,7 +19,9 @@
             console.log(total)
         } else {
             total = (precioHabitacion * personas) * dias
-            parseInt(prompt(`El total a pagar es de $ ${total} reales. Desea continuar con la reserva?`))
+            reserva = parseInt(prompt(`El total a pagar es de $ ${total} reales. Desea continuar con la reserva?`))
+        } if (reserva == "si") {
+            parseInt(prompt("Que buena noticia! Lo esperamos en el paraíso."))
         }
 
 
