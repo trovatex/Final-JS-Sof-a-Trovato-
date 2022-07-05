@@ -1,8 +1,7 @@
         const precioHabitacion = 50
         const descuento = 0.15
-
-        let nombre = (prompt("Bienvenido al Hostel TROVATEX! Ingrese su nombre para continuar.")).toLowerCase();
         let dias, personas
+        let nombre = (prompt("Bienvenido al Hostel TROVATEX! Ingrese su nombre para continuar.")).toLowerCase();
 
         do {
             dias = parseFloat(prompt(`Hola ${nombre}! Cuantos días te gustaría estar en el paraíso?`))
@@ -27,9 +26,10 @@
             console.log(total)
         } else {
             total = (precioHabitacion * personas) * dias
-            reserva = parseInt(prompt(`El total a pagar es de $ ${total} reales. Desea continuar con la reserva?`))
-        } if (reserva == "si") {
-            parseInt(prompt("Que buena noticia! Lo esperamos en el paraíso."))
+            reserva = parseInt(prompt(`El total a pagar es de $ ${total} reales. Desea continuar con la reserva?`)).toLowerCase()
+        } 
+        if (reserva === "no") {
+            prompt("Que lástima :( Lo esperamos algún otro día en el paraíso.")
         }
 
 
@@ -38,7 +38,7 @@
 
 
 
-// const total = (precioHabitacion, personas) => precioHabitacion * personas
+// const total = (precioHabitacion, personas, dias) => (precioHabitacion * personas) * dias
 // console.log(total)
 
 // function precio (parametro1, parametro2) {
