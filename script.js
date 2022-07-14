@@ -90,7 +90,7 @@ function buscarHostel (hostels) {
 
 function buscarPrecio (hostels) {
     let precioHostel = parseInt(prompt("Ingrese un precio"))
-
+        //esto es lo único que no funciona, porque me dice que precio no esta definido y es el tercer parámetro del constructor
     let precioBuscado = hostels.filter(hostels => hostels.precio >= precio)
 
     if (precioBuscado.length == 0) {
