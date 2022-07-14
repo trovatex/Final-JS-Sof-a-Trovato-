@@ -1,7 +1,7 @@
         const precioHabitacion = 50
         const descuento = 0.15
         let dias, personas, reserva
-        let nombre = (prompt("Bienvenido al Hostel TROVATEX! Ingrese su nombre para continuar.")).toLowerCase();
+        let nombre = (prompt("Bienvenido al Hostel TROVATEX! Ingrese su nombre para continuar.")).toLowerCase()
 
         do {
             dias = parseFloat(prompt(`Hola ${nombre}! Cuantos días te gustaría estar en el paraíso?`))
@@ -57,9 +57,6 @@ const multiplicar = (personas, dias) => personas * dias
 // }
 // let sumar = sumar (dias, personas)
 
-
-//////////////////////////////////////                   HASTA ACA ESTA TODO BIEN, AHORA
-
 //////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// ARRAYS ///////////////////////////////////////
 
@@ -75,14 +72,19 @@ class Hostel {
 }
 //FUNCIONES
 function buscarHostel (hostels) {
-    let nombreHostel = prompt("Ingrese el nombre del Hostel que está buscando")
+    let nombreHostel = prompt(`Ingrese el nombre del Hostel que está buscando. Las opciones disponibles son:
+    Trovatex Ferradurinha
+    Trovatex Potrero
+    Trovatex Cinque Terre
+    Trovatex Barcelona
+    `)
 
     let hostelBuscado = hostels.find(hostels => hostels.nombre == nombreHostel)
 
     if (hostelBuscado == undefined) {
-        alert ("Hostel no encontrado")
+        alert (`Hostel no encontrado`)
     } else {
-        alert (`El hostel ${hostelBuscado} está disponible`)
+        alert (`El hostel está disponible`)
     }
 }
 
@@ -94,7 +96,7 @@ function buscarPrecio (hostels) {
     if (precioBuscado.length == 0) {
         alert ("No hay hostels con dichas características")
     } else {
-        alert (precioBuscado)
+        console.log(precioBuscado)
     }
 }
 
@@ -104,20 +106,20 @@ function ordenarHostels (hostels) {
 
     if (metodoOrdenamiento === 1){
 
-        alert (hostels.sort((a,b) => a-b))
+        console.log(hostels.sort((a,b) => a.precio - b.precio))
     } else if (metodoOrdenamiento === 2){
 
-        alert (hostels.sort((a,b) => b-a))
+        console.log(hostels.sort((a,b) => b.precio - a.precio))
     }
 }
 
 
 
 
-const hostel1 = new Hostel ( "Trovatex Ferradurinha", "Brasil", 20, 7.5, [vistaAlMar, terraza, bañoCompartido])
-const hostel2 = new Hostel ( "Trovatex Potrero", "Costa Rica", 30, 8, [vistaAlMar, balcon, cocinaIndividual])
-const hostel3 = new Hostel ( "Trovatex Cinque Terre", "Italia", 50, 9.2, [vistaAlMar, terraza, desayunoIncluido])
-const hostel4 = new Hostel ( "Trovatex Barcelona", "España", 100, 9.5, [vistaAlMar, balcon, conJacuzzi])
+const hostel1 = new Hostel ( "Trovatex Ferradurinha", "Brasil", 90, 7.5, ["vistaAlMar", "terraza", "bañoCompartido"])
+const hostel2 = new Hostel ( "Trovatex Potrero", "Costa Rica", 60, 8, ["vistaAlMar", "balcon", "cocinaIndividual"])
+const hostel3 = new Hostel ( "Trovatex Cinque Terre", "Italia", 150, 9.2, ["vistaAlMar", "terraza", "desayunoIncluido"])
+const hostel4 = new Hostel ( "Trovatex Barcelona", "España", 100, 9.5, ["vistaAlMar", "balcon", "conJacuzzi"])
 
 const hostels = [hostel1, hostel2, hostel3, hostel4]
 console.log (hostels)   
@@ -133,7 +135,7 @@ do {
         3- Ordenar de menor a mayor puntuación 
     `))
 
-} while (respuesta >=1 && respuesta <=3)
+} while (respuesta <1 || respuesta >3)
 
 switch (respuesta) {
         case 1:
