@@ -1,7 +1,7 @@
         const precioHabitacion = 50
         const descuento = 0.15
         let dias, personas, reserva
-        let nombre = (prompt("Bienvenido al Hostel TROVATEX! Ingrese su nombre para continuar.")).toLowerCase()
+        let nombre = (prompt("Bienvenido al Hostel TROVATEX! Ingrese su nombre para continuar."))
 
         do {
             dias = parseFloat(prompt(`Hola ${nombre}! Cuantos días te gustaría estar en el paraíso?`))
@@ -38,30 +38,15 @@
 
         }
 
-//////////////////////////////////////////////////////////////////////////////////
-//FUNCIONES AUN NO APLICADAS
-// const total = (precioHabitacion, personas, dias) => (precioHabitacion * personas) * dias
-// console.log(total)
-
-
-// function precio (parametro1, parametro2) {
-//  return parametro1, parametro2
-// }
-//  let multiplicar = multiplicar (dia * personas)
-//     console.log (precio)
 
 const multiplicar = (personas, dias) => personas * dias
 
-// function sumar (parametro1, parametro2) {
-//     return parametro1 + parametro2
-// }
-// let sumar = sumar (dias, personas)
 
-//////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////// ARRAYS ///////////////////////////////////////
+// ARRAYS ///////////////////////////////////////
 
 class Hostel {
-    constructor (nombre, ubicacion, precio, estrellas, habitacionDisponible){
+    constructor (id, nombre, ubicacion, precio, estrellas, habitacionDisponible){
+        this.id = id
         this.nombre = nombre
         this.ubicacion = ubicacion
         this.precio = precio
@@ -116,10 +101,10 @@ function ordenarHostels (hostels) {
 
 
 
-const hostel1 = new Hostel ( "Trovatex Ferradurinha", "Brasil", 90, 7.5, ["vistaAlMar", "terraza", "bañoCompartido"])
-const hostel2 = new Hostel ( "Trovatex Potrero", "Costa Rica", 60, 8, ["vistaAlMar", "balcon", "cocinaIndividual"])
-const hostel3 = new Hostel ( "Trovatex Cinque Terre", "Italia", 150, 9.2, ["vistaAlMar", "terraza", "desayunoIncluido"])
-const hostel4 = new Hostel ( "Trovatex Barcelona", "España", 100, 9.5, ["vistaAlMar", "balcon", "conJacuzzi"])
+const hostel1 = new Hostel (1, "Trovatex Ferradurinha", "Brasil", 90, 7.5, ["con vista al mar", "terraza", "baño compartido"])
+const hostel2 = new Hostel (2, "Trovatex Potrero", "Costa Rica", 60, 8, ["con vista al mar", "balcon", "cocina individual"])
+const hostel3 = new Hostel (3, "Trovatex Cinque Terre", "Italia", 150, 9.2, ["con vista al mar", "terraza", "desayuno incluido"])
+const hostel4 = new Hostel (4, "Trovatex Barcelona", "España", 100, 9.5, ["con vista al mar", "balcon", "con jacuzzi"])
 
 const hostels = [hostel1, hostel2, hostel3, hostel4]
 console.log (hostels)   
@@ -151,3 +136,23 @@ switch (respuesta) {
             alert ("Opción no válida")
             break
 }
+
+
+//DOM
+//plantilla con propiedades de cada hostel
+const divHostels = document.getElementById('hostels')
+
+
+hostels.forEach(hostel => {
+    divHostels.innerHTML += `
+        <div class="card hostels" id="hostel${hostel.id}" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Nombre: ${hostel.nombre}</h5>
+                <p class="card-text">Ubicación: ${hostel.ubicacion}</p>
+                <p class="card-text">Precio: $${hostel.precio}</p>
+                <p class="card-text">Estrelllas: ${hostel.estrellas}</p>
+                <p class="card-text">Habitaciones disponibles: ${hostel.habitacionDisponible}</p>
+        </div>
+        </div>
+        `}
+    )
