@@ -34,7 +34,7 @@
         if (reserva === "no") {
             prompt("Que lástima :( Lo esperamos algún otro día en el paraíso.")
         } else if  (reserva === "si"){
-                prompt("Nos vemos pronto!! :)")
+                alert("Nos vemos pronto!! :)")
 
         }
 
@@ -55,6 +55,7 @@ class Hostel {
 
     }
 }
+
 //FUNCIONES
 function buscarHostel (hostels) {
     let nombreHostel = prompt(`Ingrese el nombre del Hostel que está buscando. Las opciones disponibles son:
