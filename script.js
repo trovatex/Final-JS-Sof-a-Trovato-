@@ -157,3 +157,18 @@ hostels.forEach(hostel => {
         </div>
         `}
     )
+
+
+//EVENTOS
+
+const boton1 = document.getElementById('boton1')
+const input1 = document.getElementById('input1')
+
+boton1.addEventListener("click", () => {
+   console.log("Se ingreso un usuario")
+})
+
+input1.addEventListener("input", () => {
+    console.log(input1.value)
+} )
+
