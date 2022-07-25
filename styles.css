@@ -18,3 +18,32 @@ h2 {
     padding:4px;
     color:black;
 } 
+
+
+
+input{
+    width: 50em;
+    height: 3.5em;
+    margin: 1.7em;
+    color: black;
+    padding: 1em;
+    font-size: 1em;
+}
+
+.button{
+    margin: 2.3em 0;
+    height: 3.5em;
+    width: 8em;
+    border-radius: .6em;
+    cursor: pointer;
+    color: white;
+    background: green ;
+    transition: .3s;
+    border: white solid;
+}
+
+.button:hover{
+    color: white;
+    background-color: black;
+    transition: .3s;
+}

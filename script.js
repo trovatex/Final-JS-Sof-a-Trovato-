@@ -1,45 +1,45 @@
-        const precioHabitacion = 50
-        const descuento = 0.15
-        let dias, personas, reserva
-        let nombre = (prompt("Bienvenido al Hostel TROVATEX! Ingrese su nombre para continuar."))
+//         const precioHabitacion = 50
+//         const descuento = 0.15
+//         let dias, personas, reserva
+//         let nombre = (prompt("Bienvenido al Hostel TROVATEX! Ingrese su nombre para continuar."))
 
-        do {
-            dias = parseFloat(prompt(`Hola ${nombre}! Cuantos días te gustaría estar en el paraíso?`))
-        if (isNaN(dias)) {
-            alert("Por favor ingresa un número válido")
-        }
-        } while (isNaN(dias))
+//         do {
+//             dias = parseFloat(prompt(`Hola ${nombre}! Cuantos días te gustaría estar en el paraíso?`))
+//         if (isNaN(dias)) {
+//             alert("Por favor ingresa un número válido")
+//         }
+//         } while (isNaN(dias))
     
             
-        do { 
-            personas = parseFloat(prompt("Cuantas personas se van a hospedar en el hostel?"))
-        if(isNaN(personas)) {
-            alert("Por favor ingresa un número válido")
-        }
-        } while (isNaN(personas))
+//         do { 
+//             personas = parseFloat(prompt("Cuantas personas se van a hospedar en el hostel?"))
+//         if(isNaN(personas)) {
+//             alert("Por favor ingresa un número válido")
+//         }
+//         } while (isNaN(personas))
 
-        //descuento
-        cupon = (prompt("Tiene cupon de descuento?")).toLowerCase()
+//         //descuento
+//         cupon = (prompt("Tiene cupon de descuento?")).toLowerCase()
 
         
-        //falta agregar una funcion en total
-        if (cupon == "si") {
-            total = (( precioHabitacion - (precioHabitacion * descuento) ) * personas) * dias
-            reserva = (prompt(`El total a pagar es de $ ${total} reales. Desea continuar con la reserva?`)).toLowerCase()
-        } else {
-            total = (precioHabitacion * personas) * dias
-            reserva = (prompt(`El total a pagar es de $ ${total} reales. Desea continuar con la reserva?`)).toLowerCase()
-        } 
+//         //falta agregar una funcion en total
+//         if (cupon == "si") {
+//             total = (( precioHabitacion - (precioHabitacion * descuento) ) * personas) * dias
+//             reserva = (prompt(`El total a pagar es de $ ${total} reales. Desea continuar con la reserva?`)).toLowerCase()
+//         } else {
+//             total = (precioHabitacion * personas) * dias
+//             reserva = (prompt(`El total a pagar es de $ ${total} reales. Desea continuar con la reserva?`)).toLowerCase()
+//         } 
 
-        if (reserva === "no") {
-            prompt("Que lástima :( Lo esperamos algún otro día en el paraíso.")
-        } else if  (reserva === "si"){
-                alert("Nos vemos pronto!! :)")
+//         if (reserva === "no") {
+//             prompt("Que lástima :( Lo esperamos algún otro día en el paraíso.")
+//         } else if  (reserva === "si"){
+//                 alert("Nos vemos pronto!! :)")
 
-        }
+//         }
 
 
-const multiplicar = (personas, dias) => personas * dias
+// const multiplicar = (personas, dias) => personas * dias
 
 
 // ARRAYS ///////////////////////////////////////
@@ -56,48 +56,48 @@ class Hostel {
     }
 }
 
-//FUNCIONES
-function buscarHostel (hostels) {
-    let nombreHostel = prompt(`Ingrese el nombre del Hostel que está buscando. Las opciones disponibles son:
-    Trovatex Ferradurinha
-    Trovatex Potrero
-    Trovatex Cinque Terre
-    Trovatex Barcelona
-    `)
+// //FUNCIONES
+// function buscarHostel (hostels) {
+//     let nombreHostel = prompt(`Ingrese el nombre del Hostel que está buscando. Las opciones disponibles son:
+//     Trovatex Ferradurinha
+//     Trovatex Potrero
+//     Trovatex Cinque Terre
+//     Trovatex Barcelona
+//     `)
 
-    let hostelBuscado = hostels.find(hostels => hostels.nombre == nombreHostel)
+//     let hostelBuscado = hostels.find(hostels => hostels.nombre == nombreHostel)
 
-    if (hostelBuscado == undefined) {
-        alert (`Hostel no encontrado`)
-    } else {
-        alert (`El hostel está disponible`)
-    }
-}
+//     if (hostelBuscado == undefined) {
+//         alert (`Hostel no encontrado`)
+//     } else {
+//         alert (`El hostel está disponible`)
+//     }
+// }
 
-function buscarPrecio (hostels) {
-    let precioHostel = parseInt(prompt("Ingrese un precio"))
-        //esto es lo único que no funciona, porque me dice que precio no esta definido y es el tercer parámetro del constructor
-    let precioBuscado = hostels.filter(hostels => hostels.precio >= precio)
+// function buscarPrecio (hostels) {
+//     let precioHostel = parseInt(prompt("Ingrese un precio"))
+//         //esto es lo único que no funciona, porque me dice que precio no esta definido y es el tercer parámetro del constructor
+//     let precioBuscado = hostels.filter(hostels => hostels.precio >= precio)
 
-    if (precioBuscado.length == 0) {
-        alert ("No hay hostels con dichas características")
-    } else {
-        console.log(precioBuscado)
-    }
-}
+//     if (precioBuscado.length == 0) {
+//         alert ("No hay hostels con dichas características")
+//     } else {
+//         console.log(precioBuscado)
+//     }
+// }
 
-function ordenarHostels (hostels) {
+// function ordenarHostels (hostels) {
 
-    let metodoOrdenamiento = parseInt(prompt("Ingrese 1 para ordenar de menor a mayor, 2 para ordenar de mayor a menor"))
+//     let metodoOrdenamiento = parseInt(prompt("Ingrese 1 para ordenar de menor a mayor, 2 para ordenar de mayor a menor"))
 
-    if (metodoOrdenamiento === 1){
+//     if (metodoOrdenamiento === 1){
 
-        console.log(hostels.sort((a,b) => a.precio - b.precio))
-    } else if (metodoOrdenamiento === 2){
+//         console.log(hostels.sort((a,b) => a.precio - b.precio))
+//     } else if (metodoOrdenamiento === 2){
 
-        console.log(hostels.sort((a,b) => b.precio - a.precio))
-    }
-}
+//         console.log(hostels.sort((a,b) => b.precio - a.precio))
+//     }
+// }
 
 
 
@@ -111,32 +111,32 @@ const hostels = [hostel1, hostel2, hostel3, hostel4]
 console.log (hostels)   
 
 
-let respuesta
-//VALIDACIONES con un pequeño menú
+// let respuesta
+// //VALIDACIONES con un pequeño menú
 
-do {
-    respuesta = parseInt(prompt(`Ingrese número para:
-        1- Buscar un hostel 
-        2- Buscar hostel por precio
-        3- Ordenar de menor a mayor puntuación 
-    `))
+// do {
+//     respuesta = parseInt(prompt(`Ingrese número para:
+//         1- Buscar un hostel 
+//         2- Buscar hostel por precio
+//         3- Ordenar de menor a mayor puntuación 
+//     `))
 
-} while (respuesta <1 || respuesta >3)
+// } while (respuesta <1 || respuesta >3)
 
-switch (respuesta) {
-        case 1:
-            buscarHostel(hostels)
-            break
-        case 2:
-            buscarPrecio(hostels)
-            break
-        case 3: 
-            ordenarHostels (hostels)
-            break
-        default:
-            alert ("Opción no válida")
-            break
-}
+// switch (respuesta) {
+//         case 1:
+//             buscarHostel(hostels)
+//             break
+//         case 2:
+//             buscarPrecio(hostels)
+//             break
+//         case 3: 
+//             ordenarHostels (hostels)
+//             break
+//         default:
+//             alert ("Opción no válida")
+//             break
+// }
 
 
 //DOM
@@ -160,15 +160,24 @@ hostels.forEach(hostel => {
 
 
 //EVENTOS
+const inputBuscador = document.getElementById("inputBuscador")
+const boton= document.getElementById("button")
 
-const boton1 = document.getElementById('boton1')
-const input1 = document.getElementById('input1')
 
-boton1.addEventListener("click", () => {
-   console.log("Se ingreso un usuario")
+document.addEventListener("keyup", e=>{
+
+if (e.target.matches("#inputBuscador")){  
+if (e.key ==="Escape")e.target.value = ""
+document.querySelectorAll(".alojamiento").forEach(palabra =>{
+  
+palabra.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+?palabra.classList.remove("filtro")
+:palabra.classList.add("filtro")
+})
+}
 })
 
-input1.addEventListener("input", () => {
-    console.log(input1.value)
-} )
+//PARA QUE LAS BUSQUEDAS QUE HAGA EL USUARIO QUEDEN GUARDADAS, Y EN OCASIONES FUTURAS LE LLEGUEN OFERTAS QUE COINCIDAN CON SU BUSQUEDA
 
+inputBuscador.addEventListener("change", () => { console.log(inputBuscador.value) })
+boton.addEventListener("click", () =>{ console.log (inputBuscador.value)})
