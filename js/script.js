@@ -45,13 +45,14 @@
 // ARRAYS ///////////////////////////////////////
 
 class Hostel {
-    constructor (id, nombre, ubicacion, precio, estrellas, habitacionDisponible){
+    constructor (id, nombre, ubicacion, precio, estrellas, habitacionDisponible, cantidadPersonas){
         this.id = id
         this.nombre = nombre
         this.ubicacion = ubicacion
         this.precio = precio
         this.estrellas = estrellas
         this.habitacionDisponible = habitacionDisponible
+        this.cantidadPersonas = cantidadPersonas
 
     }
 }
@@ -168,7 +169,7 @@ document.addEventListener("keyup", e=>{
 
 if (e.target.matches("#inputBuscador")){  
 if (e.key ==="Escape")e.target.value = ""
-document.querySelectorAll(".alojamiento").forEach(palabra =>{
+document.querySelectorAll(".hostels").forEach(palabra =>{
   
 palabra.textContent.toLowerCase().includes(e.target.value.toLowerCase())
 ?palabra.classList.remove("filtro")
