@@ -41,15 +41,15 @@
         <input type="number" class="form-control" id="cantidadPersonas">
         <select class="form-label" type="text" id="hostel">
             <div class="container">
-            <option value="3000">Habitación preferencial: $100</option>
-            <option value="2000">Habitación con vista al mar: $150</option>
-            <option value="1000">Habitación compartida: $70</option>
+            <option value="100">Habitación preferencial: $100</option>
+            <option value="150">Habitación con vista al mar: $150</option>
+            <option value="70">Habitación compartida: $70</option>
           </div>
         </select>
       <button type="submit" class="btn colorBoton my-2">Calcular</button>
     </div>
   </form>
-
+  <div id="information"></div>
     <form id="Formulario2">
       <div class="container">
         <h2 class="text-center">Ingresá con tu usuario para buscar tu reserva</h2>
@@ -60,6 +60,7 @@
         <button type="submit" class="btn colorBoton my-2">Ingresar</button>
       </div>
     </form>
+    <div id="informationPersona"></div>
     <div class="col-xl-6 col-md-12">
         <img class="img-fluid rounded" src="/images/buzios2.jpeg" alt="playas de buzios">
     </div>
@@ -76,7 +77,7 @@
 <div class="row">
     <div class="col-12 text-center" id="infoUsuarios"></div>
 </div>
-<button class="btn btn-lg px-4 gap-3 colorBoton m-3" id="admin"> Admin </button>
+<button class="btn btn-lg btn-primary px-4 gap-3 m-3" id="admin"> Admin </button>
 <div class="row">
     <div id="datosAdmin"></div>
 </div>

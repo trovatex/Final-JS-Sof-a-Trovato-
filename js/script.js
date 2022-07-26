@@ -60,15 +60,12 @@ idFormulario1.addEventListener('submit', (e) => {
     const select = document.getElementById('hostel');
     const value = select.options[select.selectedIndex].value;
     console.log(value);
-
     const dias = document.getElementById('dias').value;
     const cantidadPersonas = document.getElementById('cantidadPersonas').value;
-
     const precio = (dias * value) * cantidadPersonas
+    localStorage.setItem('Precio', JSON.stringify(precio));
     console.log('El precio elegido es: ' + precio)
     document.getElementById('information').innerHTML = "El precio elegido es: " + precio;
-
-    localStorage.setItem('precio', JSON.stringify(precio));
     idFormulario1.reset();
     
 })
@@ -83,23 +80,31 @@ idFormulario2.addEventListener('submit', (e) => {
     const persona = new Persona(nombre, email);
 
     personas.push(persona);
+    console.log(persona)
+    console.log(personas)
+    document.getElementById('informationPersona').innerHTML = persona.nombre +" "+ persona.email;
 
-    localStorage.setItem('Persona', JSON.stringify(personas));
+    localStorage.setItem('Persona', JSON.stringify(persona));
 
     idFormulario2.reset();
 
-    mostrarInfo(persona);
+
+    // function mostrarInfo(persona){
+    //     console.log(persona)
+    // };
+
+    // mostrarInfo();
 })
 
-//localStorage. 
-
+// Admin //
 const botonAdmin = document.getElementById('admin');
 const datosAdmin = document.getElementById('datosAdmin');
-
 botonAdmin.addEventListener('click', () => {
     const personas = JSON.parse(localStorage.getItem('Persona'));
+    console.log(personas)
     let aux = '';
-    personas.forEach(persona => {
+
+    personas.forEach( persona => {
         aux += `<p class="resultado"> Nombre: ${persona.nombre} </p>
                 <p class="resultado"> Correo Electrónico: ${persona.email}</p><hr>`
     });
