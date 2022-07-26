@@ -1,14 +1,21 @@
 h1 {
     display: flex;
     justify-content: center;
+    font-style: italic;
     color: antiquewhite;
-    background-color: green;
+    background-color: #3f6bf4;
+    background-image: linear-gradient(132deg, #3f6bf4 0%, #41c340 49%, #fff27c 100%);    
+    padding: 50px;
 
+}
+.navbar-brand {
+    padding: 50px;
 }
 
 h2 {
     display: flex;
     justify-content: center;
+    font-style: italic;
 }
 
 #hostels {
@@ -19,31 +26,9 @@ h2 {
     color:black;
 } 
 
-
-
-input{
-    width: 50em;
-    height: 3.5em;
-    margin: 1.7em;
-    color: black;
-    padding: 1em;
-    font-size: 1em;
-}
-
-.button{
-    margin: 2.3em 0;
-    height: 3.5em;
-    width: 8em;
-    border-radius: .6em;
-    cursor: pointer;
-    color: white;
-    background: green ;
-    transition: .3s;
-    border: white solid;
-}
-
-.button:hover{
-    color: white;
-    background-color: black;
-    transition: .3s;
+.arrays {
+    margin: 10px;
+    padding-top: 50px;
+    display: flex;
+    align-content: center;
 }
