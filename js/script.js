@@ -1,7 +1,6 @@
 // OBJETOS ///////////////////////////////////////
-
 class Hostel {
-    constructor (id, nombre, ubicacion, precio, estrellas, habitacionDisponible, cantidadPersonas){
+    constructor(id, nombre, ubicacion, precio, estrellas, habitacionDisponible, cantidadPersonas) {
         this.id = id
         this.nombre = nombre
         this.ubicacion = ubicacion
@@ -10,24 +9,22 @@ class Hostel {
         this.habitacionDisponible = habitacionDisponible
         this.cantidadPersonas = cantidadPersonas
     }
-    calcularPrecio (){
-        return this.cantidadPersonas * this.precio;
-    }
 }
 
 class Persona {
-    constructor (nombre, email) {
-    this.nombre = nombre
-    this.email = email
-}}
+    constructor(nombre, email) {
+        this.nombre = nombre
+        this.email = email
+    }
+}
 
 
 // ARRAYS ///////////////////////////////////////
 
-const hostel1 = new Hostel (1, "Trovatex Ferradurinha", "Brasil", 90, 7.5, ["con vista al mar", "terraza", "baño compartido"])
-const hostel2 = new Hostel (2, "Trovatex Potrero", "Costa Rica", 60, 8, ["con vista al mar", "balcon", "cocina individual"])
-const hostel3 = new Hostel (3, "Trovatex Cinque Terre", "Italia", 150, 9.2, ["con vista al mar", "terraza", "desayuno incluido"])
-const hostel4 = new Hostel (4, "Trovatex Barcelona", "España", 100, 9.5, ["con vista al mar", "balcon", "con jacuzzi"])
+const hostel1 = new Hostel(1, "Trovatex Ferradurinha", "Brasil", 90, 7.5, ["con vista al mar", "terraza", "baño compartido"])
+const hostel2 = new Hostel(2, "Trovatex Potrero", "Costa Rica", 60, 8, ["con vista al mar", "balcon", "cocina individual"])
+const hostel3 = new Hostel(3, "Trovatex Cinque Terre", "Italia", 150, 9.2, ["con vista al mar", "terraza", "desayuno incluido"])
+const hostel4 = new Hostel(4, "Trovatex Barcelona", "España", 100, 9.5, ["con vista al mar", "balcon", "con jacuzzi"])
 
 const hostels = [hostel1, hostel2, hostel3, hostel4]
 
@@ -50,28 +47,30 @@ hostels.forEach(hostel => {
                 <p class="card-text">Habitaciones disponibles: ${hostel.habitacionDisponible}</p>
         </div>
         </div>
-        `}
-    )
+        `
+})
 
 
 //  EVENTOS //////////////////////////////////////
 
-const idFormulario1 = document.getElementById ('formulario1')
-idFormulario1.addEventListener ('submit', (e) => {
+const idFormulario1 = document.getElementById('Formulario1')
+idFormulario1.addEventListener('submit', (e) => {
     e.preventDefault();
-    const hostel = document.getElementById('hostel').value;
+
+    const select = document.getElementById('hostel');
+    const value = select.options[select.selectedIndex].value;
+    console.log(value);
+
     const dias = document.getElementById('dias').value;
     const cantidadPersonas = document.getElementById('cantidadPersonas').value;
 
+    const precio = (dias * value) * cantidadPersonas
+    console.log('El precio elegido es: ' + precio)
+    document.getElementById('information').innerHTML = "El precio elegido es: " + precio;
 
-const resultado = document.getElementById('infoUsuarios');
-
-const mostrarInfo = (persona) => {
-    let aux = '';
-    aux += `<p class="resultado"> ${persona.nombre} el total de su reserva es de: </p>
-            <p class="resultado"> $ ${resultado.calcularPrecio()} </p>`;
-    resultado.innerHTML = aux;
-}
+    localStorage.setItem('precio', JSON.stringify(precio));
+    idFormulario1.reset();
+    
 })
 
 const idFormulario2 = document.getElementById('Formulario2');
@@ -81,7 +80,7 @@ idFormulario2.addEventListener('submit', (e) => {
     const nombre = document.getElementById('nombre').value;
     const email = document.getElementById('email').value;
 
-    const persona = new Persona (nombre, email);
+    const persona = new Persona(nombre, email);
 
     personas.push(persona);
 
@@ -104,9 +103,9 @@ botonAdmin.addEventListener('click', () => {
         aux += `<p class="resultado"> Nombre: ${persona.nombre} </p>
                 <p class="resultado"> Correo Electrónico: ${persona.email}</p><hr>`
     });
+
     datosAdmin.innerHTML = aux;
 });
-
 
 
 
@@ -118,10 +117,10 @@ botonAdmin.addEventListener('click', () => {
 
 // document.addEventListener("keyup", e=>{
 
-// if (e.target.matches("#inputBuscador")){  
+// if (e.target.matches("#inputBuscador")){
 // if (e.key ==="Escape")e.target.value = ""
 // document.querySelectorAll(".hostels").forEach(palabra =>{
-  
+
 // palabra.textContent.toLowerCase().includes(e.target.value.toLowerCase())
 // ?palabra.classList.remove("filtro")
 // :palabra.classList.add("filtro")
