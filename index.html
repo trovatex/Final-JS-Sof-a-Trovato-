@@ -8,12 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/5/spacelab/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/3939fc1087.js" crossorigin="anonymous"></script>
+    <link rel="shorcut icon" type="image/x-icon" href="images/logohostel.png">
   </head>
   <body>
 
     <!-- NAVEGADOR -->
-    <nav class="navbar bg-light">
+    <nav class="navbar text-bg-dark p-3">
       <div class="container-fluid">
+        <img src="images/logohostel.png" width="50" height="50" alt="logo mundo verde" class="logo"></img>
         <a class="navbar-brand">Hostel Trovatex</a>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="buscar">
@@ -23,64 +25,63 @@
     </nav>
 
   <!-- HERO -->
-  <div class="px-4 py-5 text-center fondo">
-    <h1 class="display-5 fw-bold">Hostels alrededor del mundo</h1>
+  <div class="px-4 py-5 text-center container-fluid fondo">
+    <h1>Hostels alrededor del mundo</h1>
     <div class="col-lg-6 mx-auto">
         <h2 class="lead mb-4">Busca tu hostel ideal, calcula y compara precios.</h2>
     </div>
 </div>
 
 <!-- FORMULARIO -->
-<div class="row my-4">
-    <form class="col-xl-6 col-md-12" id="Formulario1">
-      <div class="container">
-        <h2 class="text-center">Calcula tu estadía</h2>
-        <label for="dias" class="form-label">Días</label>
-        <input type="number" class="form-control" id="dias">
-        <label for="cantidadPersonas" class="form-label">Cantidad de personas</label>
-        <input type="number" class="form-control" id="cantidadPersonas">
-        <select class="form-label" type="text" id="hostel">
-            <div class="container">
-            <option value="100">Habitación preferencial: $100</option>
-            <option value="150">Habitación con vista al mar: $150</option>
-            <option value="70">Habitación compartida: $70</option>
+<div class="container">
+    <div class="row">
+        <form class="col-xl-6" id="Formulario1">
+            <h2 class="text-center">Calcula tu estadía</h2>
+              <label for="dias" class="form-label">Días</label>
+              <input type="number" class="form-control" id="dias">
+              <label for="cantidadPersonas" class="form-label">Cantidad de personas</label>
+              <input type="number" class="form-control" id="cantidadPersonas">
+                <select class="form-label" type="text" id="hostel">
+                  <option value="100" class="options">Habitación preferencial: $100</option>
+                  <option value="150">Habitación con vista al mar: $150</option>
+                  <option value="70">Habitación compartida: $70</option>
+                </select>
+              <div class="col">
+            <button class="btn btn-outline-success" type="submit">Calcular</button>
           </div>
-        </select>
-      <button type="submit" class="btn colorBoton my-2">Calcular</button>
-    </div>
-  </form>
-  <div id="information"></div>
-    <form id="Formulario2">
-      <div class="container">
-        <h2 class="text-center">Ingresá con tu usuario para buscar tu reserva</h2>
-        <label for="nombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="nombre">
-        <label for="email" class="form-label">Correo Electrónico</label>
-        <input type="email" class="form-control" id="email" required><br>
-        <button type="submit" class="btn colorBoton my-2">Ingresar</button>
-      </div>
-    </form>
+        </form> 
+      <img class="col-xl-6 img-fluid rounded" src="/images/buzios2.jpeg" alt="playas de buzios">
+    <!-- muestro resultado -->
+    <div class="information" id="information"></div>
+
+      <form class="col-xl-6" id="Formulario2">
+          <h2 class="text-center">Ingresá con tu usuario para buscar tu reserva</h2>
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input type="email" class="form-control" id="email" required><br>
+          <button class="btn btn-outline-success" type="submit">Ingresar</button>
+        </div>
+      </form>
+  </div>
     <div id="informationPersona"></div>
-    <div class="col-xl-6 col-md-12">
-        <img class="img-fluid rounded" src="/images/buzios2.jpeg" alt="playas de buzios">
-    </div>
-</div>
 
+
+
+</div>
 <!-- MUESTRO ARRAYS -->
-<div id="hostels" class="arrays" href=""></div> 
+<div id="hostels" class="arrays"></div> 
 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-  <button type="button" class="btn btn-lg px-4 gap-3 colorBoton">Chequear hostels disponibles</button>
+  <button type="button" class="btn btn-outline-success">Chequear hostels disponibles</button>
 </div>
-
 
 <!-- MUESTRO LOS DATOS -->
-<div class="row">
+<div class="container">
     <div class="col-12 text-center" id="infoUsuarios"></div>
-</div>
-<button class="btn btn-lg btn-primary px-4 gap-3 m-3" id="admin"> Admin </button>
-<div class="row">
+    <button class="btn btn-outline-success" id="admin">Admin</button>
     <div id="datosAdmin"></div>
 </div>
+
 
   <!-- FOOTER -->
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">

@@ -64,8 +64,8 @@ idFormulario1.addEventListener('submit', (e) => {
     const cantidadPersonas = document.getElementById('cantidadPersonas').value;
     const precio = (dias * value) * cantidadPersonas
     localStorage.setItem('Precio', JSON.stringify(precio));
-    console.log('El precio elegido es: ' + precio)
-    document.getElementById('information').innerHTML = "El precio elegido es: " + precio;
+    console.log('El precio elegido es de: ' + precio)
+    document.getElementById('information').innerHTML = "El precio elegido es de: " + precio;
     idFormulario1.reset();
     
 })

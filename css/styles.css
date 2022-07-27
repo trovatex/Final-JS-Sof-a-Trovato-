@@ -8,8 +8,17 @@ h1 {
     padding: 50px;
 
 }
+.information {
+    margin: 30px;
+    padding: 30px;
+
+}
 .navbar-brand {
-    padding: 50px;
+    display: flex;
+    justify-content: flex-start;
+}
+.form-label{
+    padding: 10px;
 }
 
 h2 {
