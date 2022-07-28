@@ -10,7 +10,6 @@ class Hostel {
         this.cantidadPersonas = cantidadPersonas
     }
 }
-
 class Persona {
     constructor(nombre, email) {
         this.nombre = nombre
@@ -30,6 +29,7 @@ const hostels = [hostel1, hostel2, hostel3, hostel4]
 
 
 const personas = [];
+
 
 //  DOM //////////////////////////////////////
 
@@ -53,6 +53,7 @@ hostels.forEach(hostel => {
 
 //  EVENTOS //////////////////////////////////////
 
+// Formularios //
 const idFormulario1 = document.getElementById('Formulario1')
 idFormulario1.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -104,7 +105,7 @@ botonAdmin.addEventListener('click', () => {
     console.log(personas)
     let aux = '';
 
-    personas.forEach( persona => {
+    personas.forEach( persona => { 
         aux += `<p class="resultado"> Nombre: ${persona.nombre} </p>
                 <p class="resultado"> Correo Electrónico: ${persona.email}</p><hr>`
     });
@@ -113,27 +114,20 @@ botonAdmin.addEventListener('click', () => {
 });
 
 
+// Filtrar nombre de hostels //
+const inputBuscador = document.getElementById("inputBuscador")
+const boton = document.getElementById("button")
 
 
-/////////////////// ESTO ES PARA QUE EL BUSCADOR FILTRE LOS NOMBRES DE LOS HOSTELS //////////////////////////////
-// const inputBuscador = document.getElementById("inputBuscador")
-// const boton= document.getElementById("button")
+document.addEventListener("keyup", e=>{
 
+if (e.target.matches("#inputBuscador")){
+if (e.key ==="Escape")e.target.value = ""
+document.querySelectorAll("hostels").forEach(palabra =>{
 
-// document.addEventListener("keyup", e=>{
-
-// if (e.target.matches("#inputBuscador")){
-// if (e.key ==="Escape")e.target.value = ""
-// document.querySelectorAll(".hostels").forEach(palabra =>{
-
-// palabra.textContent.toLowerCase().includes(e.target.value.toLowerCase())
-// ?palabra.classList.remove("filtro")
-// :palabra.classList.add("filtro")
-// })
-// }
-// })
-
-// //PARA QUE LAS BUSQUEDAS QUE HAGA EL USUARIO QUEDEN GUARDADAS, Y EN OCASIONES FUTURAS LE LLEGUEN OFERTAS QUE COINCIDAN CON SU BUSQUEDA
-
-// inputBuscador.addEventListener("change", () => { console.log(inputBuscador.value) })
-// boton.addEventListener("click", () =>{ console.log (inputBuscador.value)})
+palabra.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+?palabra.classList.remove("filtro")
+:palabra.classList.add("filtro")
+})
+}
+})
