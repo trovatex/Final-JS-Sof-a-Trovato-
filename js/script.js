@@ -20,12 +20,16 @@ class Persona {
 
 // ARRAYS ///////////////////////////////////////
 
-const hostel1 = new Hostel(1, "Trovatex Ferradurinha", "Brasil", 90, 7.5, ["con vista al mar", "terraza", "baño compartido"])
-const hostel2 = new Hostel(2, "Trovatex Potrero", "Costa Rica", 60, 8, ["con vista al mar", "balcon", "cocina individual"])
-const hostel3 = new Hostel(3, "Trovatex Cinque Terre", "Italia", 150, 9.2, ["con vista al mar", "terraza", "desayuno incluido"])
-const hostel4 = new Hostel(4, "Trovatex Barcelona", "España", 100, 9.5, ["con vista al mar", "balcon", "con jacuzzi"])
-
-const hostels = [hostel1, hostel2, hostel3, hostel4]
+const hostel1 = new Hostel(1, "Buzios", "Brasil", 50, 7.9, ["con vista al mar ", "terraza ", "baño compartido"])
+const hostel2 = new Hostel(2, "San José", "Costa Rica", 60, 8, ["con vista al mar ", "balcon ", "cocina individual"])
+const hostel3 = new Hostel(3, "Cinque Terre", "Italia", 70, 8.2, ["con vista al mar ", "terraza ", "desayuno incluido"])
+const hostel4 = new Hostel(4, "Medellín", "Colombia", 80, 8.6, ["con vista al mar ", "balcon ", "con jacuzzi"])
+const hostel5 = new Hostel(5, "Miramar", "Argentina", 90, 9, ["con vista al mar ", "", ""])
+const hostel6 = new Hostel(6, "Bariloche", "Argentina", 100, 9.2, ["con vista al mar ", "", ""])
+const hostel7 = new Hostel(7, "Santa Cruz", "Estados Unidos", 150, 9.5, ["con vista al mar ", "", ""])
+const hostel8 = new Hostel(8, "Málaga", "España", 200, 9.7, ["con vista al mar ", "", ""])
+const hostel9 = new Hostel(9, "Lima", "Peru", 220, 9.8, ["con vista al mar ", "", ""])
+const hostels = [hostel1, hostel2, hostel3, hostel4, hostel5, hostel6, hostel7, hostel8, hostel9]
 
 
 const personas = [];
@@ -83,9 +87,9 @@ idFormulario2.addEventListener('submit', (e) => {
     personas.push(persona);
     console.log(persona)
     console.log(personas)
-    document.getElementById('informationPersona').innerHTML = persona.nombre +" "+ persona.email;
+    document.getElementById('informationPersona').innerHTML;
 
-    localStorage.setItem('Persona', JSON.stringify(persona));
+    localStorage.setItem('Persona', JSON.stringify(personas));
 
     idFormulario2.reset();
 
@@ -114,20 +118,32 @@ botonAdmin.addEventListener('click', () => {
 });
 
 
-// Filtrar nombre de hostels //
-const inputBuscador = document.getElementById("inputBuscador")
-const boton = document.getElementById("button")
-
-
-document.addEventListener("keyup", e=>{
-
-if (e.target.matches("#inputBuscador")){
-if (e.key ==="Escape")e.target.value = ""
-document.querySelectorAll("hostels").forEach(palabra =>{
-
-palabra.textContent.toLowerCase().includes(e.target.value.toLowerCase())
-?palabra.classList.remove("filtro")
-:palabra.classList.add("filtro")
+const button = document.getElementById("button")
+button.addEventListener ('click', () => {
+    Toastify({
+        text: "Hostel no encontrado",
+        duration: 3000,
+        //destination: "https://github.com/apvarun/toastify-js",
+        //newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
 })
-}
-})
+
+
+
+// // Filtrar nombre de hostels //
+// const formulario = document.querySelector("#formulario")
+// const boton = document.querySelector("#button")
+// const filtrar = () => {
+//     console.log(formulario.value)
+// }
+
+// button.addEventListener('click', filtrar)
+
